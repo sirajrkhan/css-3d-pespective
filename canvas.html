@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+			font-family: Arial, monospace, Verdana;
+			font-size: .8em;
+        }
+        img {
+            margin:2px;
+        }
+        .fl {
+            float:left;
+        }
+        .wide {
+            width: 1400px;
+        }
+        #main {
+            width: 800px;
+            overflow:scroll;
+            -webkit-transform: rotateY(-15deg);
+        }
+        #container {
+            -webkit-perspective: 200;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background-color: #CCC;
+        }
+    </style>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script>
+        function openx() {
+            $("#dialog-modal").dialog({
+                height: 300,
+                width: 540,
+                resizable: false,
+                modal: true,
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    [Original Image]
+    <div>
+        <img src="sample1.png" width="200" height="150" border="0">
+    </div>
+    <p>[In 3D Perspective] >></p>
+    <div id="container">
+        <div id="main">
+            <div class="wide">
+                <div class="fl">
+                    <div id="c1r1">
+                        <img src="sample1.png" width="200" height="150">
+                    </div>
+                    <div id="c1r2">
+                        <img src="sample2.png" width="200" height="150" usemap="#2big">
+                    </div>
+                </div>
+                <div class="fl">
+                    <div id="c2r1">
+                        <img src="sample2.png" width="200" height="100" usemap="#2small">
+                    </div>
+                    <div id="c2r2">
+                        <img src="sample3.png" width="200" height="100">
+                    </div>
+                    <div id="c2r3">
+                        <img src="sample4.png" width="200" height="100" usemap="#4small">
+                    </div>
+                </div>
+                <div class="fl">
+                    <div id="c3r1">
+                        <img src="sample3.png" width="200" height="150">
+                    </div>
+                    <div id="c3r2">
+                        <img src="sample4.png" width="200" height="150" usemap="#4big">
+                    </div>
+                </div>
+                <div class="fl">
+                    <div id="c1r1">
+                        <img src="sample1.png" width="200" height="150">
+                    </div>
+                    <div id="c1r2">
+                        <img src="sample2.png" width="200" height="150" usemap="#2big">
+                    </div>
+                </div>
+                <div class="fl">
+                    <div id="c2r1">
+                        <img src="sample2.png" width="200" height="100" usemap="#2small">
+                    </div>
+                    <div id="c2r2">
+                        <img src="sample3.png" width="200" height="100">
+                    </div>
+                    <div id="c2r3">
+                        <img src="sample4.png" width="200" height="100" usemap="#4small">
+                    </div>
+                </div>
+                <div class="fl">
+                    <div id="c3r1">
+                        <img src="sample3.png" width="200" height="150">
+                    </div>
+                    <div id="c3r2">
+                        <img src="sample4.png" width="200" height="150" usemap="#4big">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>To be viewed in Chrome and Safari (Windows)</h3> 
+    <div id="dialog-modal" title="Basic modal dialog" style="display:none;">
+        <p style="float:left; margin-right:10px;">
+            <img src="sample1.png" width="200" height="150">
+        </p>
+        <p>Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
+    </div>
+
+    <map name="2big">
+        <area shape="rect" coords="36,9,133,42" href="#" onClick="openx();">
+    </map>
+    <map name="4big">
+        <area shape="rect" coords="55,109,152,142" href="#" onClick="openx();">
+    </map>
+    <map name="2small">
+        <area shape="rect" coords="39,7,131,31" href="#" onClick="openx();">
+    </map>
+    <map name="4small">
+        <area shape="rect" coords="57,72,149,96" href="#" onClick="openx();">
+    </map>
+</body>
+</html>
